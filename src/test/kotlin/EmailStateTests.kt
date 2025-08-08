@@ -6,7 +6,6 @@ import kotlin.test.assertFalse
 
 class EmailStateTests {
 
-    // ✅ Valid emails
     @Test fun testMinimalValidEmail() {
         assertTrue(isValidEmail("a@b.c"))
     }
@@ -23,7 +22,6 @@ class EmailStateTests {
         assertTrue(isValidEmail("{}*$.&$*(@*$%&.*&*"))
     }
 
-    // ❌ Invalid emails
     @Test fun testMissingPart1() {
         assertFalse(isValidEmail("@b.c"))
     }

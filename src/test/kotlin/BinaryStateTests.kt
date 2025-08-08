@@ -48,7 +48,7 @@ class BinaryStateTest {
     }
 
     @Test fun testZeroInMiddleIsOkay() {
-        assertTrue(isValidBinaryNumber("10101")) // valid: starts and ends with 1
+        assertTrue(isValidBinaryNumber("10101"))
     }
 
     @Test fun testSpaceCharacter() {

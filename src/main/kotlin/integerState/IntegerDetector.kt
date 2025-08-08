@@ -1,7 +1,5 @@
 package integerState
 
-import binaryState.FirstValueState
-import binaryState.ValidState
 import shared.runDetector
 
 fun isValidInteger(input: String): Boolean {

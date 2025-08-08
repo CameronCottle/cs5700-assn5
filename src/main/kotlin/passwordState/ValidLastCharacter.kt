@@ -1,13 +1,13 @@
-package emailState
+package passwordState
 
-import shared.EMAIL_CHARACTERS_NO_PERIOD
+import shared.ALL_PASSWORD_CHARACTERS
 import shared.InvalidState
 import shared.State
 
-class ValidState: State {
+class ValidLastCharacter: State {
     override fun consumeLetter(letter: String) =
         when (letter) {
-            in EMAIL_CHARACTERS_NO_PERIOD -> ValidState()
+            in ALL_PASSWORD_CHARACTERS -> ValidState()
             else -> InvalidState()
         }
 }
