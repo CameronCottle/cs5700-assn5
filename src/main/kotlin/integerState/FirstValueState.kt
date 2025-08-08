@@ -6,7 +6,7 @@ import shared.InvalidState
 class FirstValueState: State {
     override fun consumeLetter(letter: String) =
         when (letter) {
-            in "0123456789" -> ValidState()
+            in "123456789" -> ValidState()
             else -> InvalidState()
     }
 }
