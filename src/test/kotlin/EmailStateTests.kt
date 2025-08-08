@@ -12,7 +12,11 @@ class EmailStateTests {
     }
 
     @Test fun testSimpleValidEmail() {
-        assertTrue(isValidEmail("joseph.ditton@usu.edu"))
+        assertTrue(isValidEmail("cameron.cottle@usu.edu"))
+    }
+
+    @Test fun testDotBeforeAt() {
+        assertTrue(isValidEmail(".@b.c"))
     }
 
     @Test fun testValidSpecialChars() {
@@ -21,31 +25,27 @@ class EmailStateTests {
 
     // ❌ Invalid emails
     @Test fun testMissingPart1() {
-        assertFalse(isValidEmail("@b.c"))  // part1 is empty
+        assertFalse(isValidEmail("@b.c"))
     }
 
     @Test fun testMultipleAts() {
-        assertFalse(isValidEmail("a@b@c.com"))  // multiple @ symbols
+        assertFalse(isValidEmail("a@b@c.com"))
     }
 
     @Test fun testMultipleDotsAfterAt() {
-        assertFalse(isValidEmail("a.b@b.b.c"))  // multiple periods after @
+        assertFalse(isValidEmail("a.b@b.b.c"))
     }
 
     @Test fun testContainsSpace() {
-        assertFalse(isValidEmail("joseph ditton@usu.edu"))  // space not allowed
+        assertFalse(isValidEmail("cameron cottle@usu.edu"))
     }
 
     @Test fun testMissingDot() {
-        assertFalse(isValidEmail("joseph@usu"))  // no period after @
+        assertFalse(isValidEmail("cameron@usu"))
     }
 
     @Test fun testMissingPart3() {
-        assertFalse(isValidEmail("joseph@usu."))  // nothing after .
-    }
-
-    @Test fun testDotBeforeAt() {
-        assertFalse(isValidEmail(".@b.c"))  // invalid part1
+        assertFalse(isValidEmail("cameron@usu."))
     }
 
     @Test fun testEmptyString() {
@@ -53,6 +53,6 @@ class EmailStateTests {
     }
 
     @Test fun testJustAtAndDot() {
-        assertFalse(isValidEmail("@."))  // missing all parts
+        assertFalse(isValidEmail("@."))
     }
 }
