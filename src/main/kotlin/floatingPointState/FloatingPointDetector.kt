@@ -1,6 +1,6 @@
 package floatingPointState
 
-import kotlin.text.iterator
+import shared.State
 
 fun isValidFloatingPointNumber(number: String): Boolean {
         var state: State = FirstValueState()

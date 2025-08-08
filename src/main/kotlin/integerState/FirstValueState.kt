@@ -1,11 +1,12 @@
 package integerState
 
-import State
+import shared.State
+import shared.InvalidState
 
 class FirstValueState: State {
     override fun consumeLetter(letter: String) =
         when (letter) {
-            in "0123456789" -> integerState.ValidState()
-            else -> integerState.InvalidState()
+            in "0123456789" -> ValidState()
+            else -> InvalidState()
     }
 }

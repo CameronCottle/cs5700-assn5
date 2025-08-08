@@ -1,5 +1,8 @@
 package floatingPointState
 
+import shared.State
+import shared.InvalidState
+
 class HasPeriodState: State {
     override fun consumeLetter(letter: String) =
             when(letter){

@@ -1,4 +1,4 @@
-package integerState
+package shared
 
 import shared.State
 
