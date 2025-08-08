@@ -1,8 +1,7 @@
-package floatingPointState
+package emailState
 
 import shared.runDetector
 
-fun isValidFloatingPointNumber(input: String): Boolean {
+fun isValidEmail(input: String): Boolean {
     return runDetector(input, FirstValueState()) { it is ValidState }
 }
-

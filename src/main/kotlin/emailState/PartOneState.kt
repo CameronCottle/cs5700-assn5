@@ -1,0 +1,4 @@
+package emailState
+
+class PartOneState {
+}

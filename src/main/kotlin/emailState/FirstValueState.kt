@@ -1,13 +1,13 @@
-package integerState
+package emailState
 
-import shared.State
+import binaryState.ValidState
 import shared.InvalidState
-import shared.NON_ZERO_DIGITS
+import shared.State
 
 class FirstValueState: State {
     override fun consumeLetter(letter: String) =
         when (letter) {
-            in NON_ZERO_DIGITS -> ValidState()
+            "1" -> ValidState()
             else -> InvalidState()
-    }
+        }
 }
