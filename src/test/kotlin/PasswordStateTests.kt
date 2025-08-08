@@ -6,6 +6,10 @@ import kotlin.test.assertFalse
 
 class PasswordStateTest {
 
+    @Test fun testLengthValidPassword() {
+        assertFalse(isValidPassword("aaaA!aa"))
+    }
+
     @Test fun testSimpleValidPassword() {
         assertTrue(isValidPassword("aaaaH!aa"))
     }
