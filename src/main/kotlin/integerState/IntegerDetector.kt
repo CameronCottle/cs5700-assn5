@@ -1,12 +1,10 @@
 package integerState
 
-import shared.State
+import binaryState.FirstValueState
+import binaryState.ValidState
+import shared.runDetector
 
-fun isValidInteger(number: String): Boolean {
-        var state: State = FirstValueState()
-        for (letter in number) {
-            state = state.consumeLetter(letter.toString())
-        }
-        return state is ValidState
-    }
+fun isValidInteger(input: String): Boolean {
+    return runDetector(input, FirstValueState()) { it is ValidState }
+}
 

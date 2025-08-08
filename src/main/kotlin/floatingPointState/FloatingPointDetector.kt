@@ -1,12 +1,10 @@
 package floatingPointState
 
-import shared.State
+import binaryState.FirstValueState
+import binaryState.ValidState
+import shared.runDetector
 
-fun isValidFloatingPointNumber(number: String): Boolean {
-        var state: State = FirstValueState()
-        for (letter in number) {
-            state = state.consumeLetter(letter.toString())
-        }
-        return state is ValidState
-    }
+fun isValidFloatingPointNumber(input: String): Boolean {
+    return runDetector(input, FirstValueState()) { it is ValidState }
+}
 
